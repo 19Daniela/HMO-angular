@@ -1,0 +1,46 @@
+<form [formGroup]="addForm" (ngSubmit)="add()">
+
+  <h2>Add Customer</h2>
+  <div>
+    <label>name:* </label> <br>
+    <input type="text" formControlName="name"/>
+    <!-- @if(addForm.controls['name'].errors?.['required'])
+    {
+      <p>this field is required</p>
+    } -->
+  </div>
+
+  <div>
+    <label>phone: </label><br>
+    <input type="text" formControlName="phone" />
+    @if(addForm.controls['phone'].errors?.['maxlength'])
+    {
+      <p>this field must have 10 numbers</p>
+    }
+  </div>
+
+  <div>
+    <label>address: </label><br>
+    <input type="text" formControlName="address"/>
+  </div>
+
+  <div>
+    <label>email:* </label><br>
+    <input type="text" formControlName="email"/>
+    <!-- @if(addForm.controls['email'].errors?.['required'])
+    {
+      <p>this field is required</p>
+    } -->
+  </div>
+
+  <div>
+    <label>age:* </label><br>
+    <input type="number" formControlName="age"/>
+    <!-- @if(addForm.controls['age'].errors?.['required'])
+    {
+      <p>this field is required</p>
+    } -->
+  </div>
+
+  <button type="submit">save</button>
+</form>

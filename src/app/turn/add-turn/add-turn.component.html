@@ -1,0 +1,31 @@
+<h5 class="h5" style="color: cornflowerblue;">Add new Turn</h5>
+<form class="form" [formGroup]="addTurn" (ngSubmit)="onSubmit()">
+    <div>
+        <label>customerId:</label>
+        <input type="text" formControlName="customerId">       
+    </div>
+    <div>
+        <label>doctorId:</label>
+        <input type="text" formControlName="doctorId">
+        @if(addTurn.controls['doctorId'].errors?.['required'])
+        {
+        <p>this field is required</p>
+        }
+    </div>
+    <div>
+        <label>type:</label>
+        <input type="text" formControlName="type"> 
+        @if(addTurn.controls['type'].errors?.['required'])
+        {
+        <p>this field is required</p>
+        }
+    </div>
+    <button type="submit"  >save new doctor</button>
+</form>
+
+
+
+
+
+
+

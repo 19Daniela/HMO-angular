@@ -1,0 +1,59 @@
+<h5 class="h5" style="color: cornflowerblue;">Add new Doctor</h5>
+<form class="form" [formGroup]="addDoctor" (ngSubmit)="add()">
+    <div>
+        <label>name:*</label>
+        <input type="text" formControlName="name">
+
+    </div>
+    <!-- <div>
+        <label>Doctor's city:</label>
+        <input type="text" formControlName="city">
+
+    </div> -->
+    <div>
+        <label>age:</label>
+        <input type="text" formControlName="age">
+        @if(addDoctor.controls['age'].errors?.['required'])
+        {
+        <p>this field is required</p>
+        }
+
+    </div>
+    <div>
+        <label>phone:*</label>
+        <input type="text" formControlName="phone">
+        @if(addDoctor.controls['phone'].errors?.['required'])
+        {
+        <p>this field is required</p>
+        }
+    </div>
+    <div>
+        <label>salary:</label>
+        <input type="text" formControlName="salary">
+        @if(addDoctor.controls['salary'].errors?.['required'])
+        {
+        <p>this field is required</p>
+        }
+    </div>
+    <button type="submit">save</button>
+</form>
+
+
+
+
+
+
+<!-- <ol>
+    <li>
+      <mat-form-field>
+        <mat-label>What's your name?</mat-label>
+        <input matInput [(ngModel)]="name">
+      </mat-form-field>
+    </li>
+    <li>
+      <button mat-raised-button (click)="openDialog()">Pick one</button>
+    </li>
+    @if (animal) {
+      <li>You chose: <em>{{animal}}</em></li>
+    }
+  </ol> -->

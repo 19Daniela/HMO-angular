@@ -1,0 +1,32 @@
+<h4 style="color: cornflowerblue;">Update form</h4>
+ <form [formGroup]="updateTurn" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Customer's id:</label>
+        <input type="text" formControlName="customerId">
+       
+    </div>
+    <div>
+        <label>Doctor's id:</label>
+        <input type="text" formControlName="doctorId">
+       
+    </div>   
+     <!-- <div>
+        <label>Doctor's city:</label>
+        <input type="text" formControlName="city">
+       
+    </div> -->
+      <div>
+         <label>Type:</label>
+        <input type="text" formControlName="type">
+        @if(updateTurn.controls['type'].errors?.['required'])
+        {
+          <p>this field is required</p>
+        }
+    </div>
+ 
+     <button type="submit" (click)="onSubmit()">save turn</button> 
+</form>
+    
+    
+
+

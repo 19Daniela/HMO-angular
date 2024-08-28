@@ -1,0 +1,74 @@
+<!-- <button class="addTurn" type="button" style="color: cornflowerblue;" (click)="navToAddTurn()" placeholder="getTurn"> ADD TURN</button>
+<mat-accordion  *ngFor="let t of turnsList" style="border: 1px solid black;"  >
+    <mat-expansion-panel hideToggle>
+
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header >
+        <mat-panel-title>
+        </mat-panel-title>
+        <mat-panel-description>
+
+          {{t.customerId}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+        <div >
+            <p>{{t.doctorId}} </p>
+            <p> {{t.type}}</p>
+
+        </div>
+
+        <button (click)="isUpdate(t)" style="color: cornflowerblue;">UPDATE</button>
+
+    </mat-expansion-panel>
+  </mat-accordion> -->
+
+  <!-- <app-update-turn *ngIf="click===true" [turn] ="currentTurn!"  (saveUpdate)="handleSaveUpdate($event)"></app-update-turn> -->
+
+
+
+
+  <div>
+    <h3>Turn List</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <!-- <th scope="col">#</th> -->
+        <th scope="col">Customer</th>
+        <th scope="col">Doctor</th>
+        <th scope="col">Id</th>
+        <th scope="col">Type</th>
+       </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let t of _turnService.turnList">
+      <!-- <div *ngIf="_customerService.isLogin">
+        <app-delete-customer></app-delete-customer>
+        </div> -->
+        <td>{{t.customerId}}</td>
+        <td>{{t.doctorId}}</td>
+        <td>{{t.turnId}}</td>
+        <td>{{t.type}}</td>
+        <!-- <app-delete-turn  [id]="t.id" (deleteCustomer)="handleDelete($event)"></app-delete-turn> -->
+        <button (click)="update()">update</button>
+          <app-update-turn *ngIf="isUpdate" [turn]="t"></app-update-turn>
+
+        <!-- <button > update<app-update-customer [turn]="c" (onUpdate)="handleUpdate($event)"> </app-update-customer></button> -->
+  </tr>
+  </tbody>
+  </table>
+  <div *ngIf="_turnService.isLogin">
+  <button (click)="add()"> add</button>
+  </div>
+
+  </div>
+
+  <!-- @if(showAddCustomer)
+  {
+    <app-add-customer></app-add-customer>
+  } -->
+
+
+
+

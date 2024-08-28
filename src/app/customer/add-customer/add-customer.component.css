@@ -1,0 +1,26 @@
+label
+{
+  text-align: left;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+button{
+  background-color: rgb(29, 134, 239);
+  color: white;
+  border: none;
+  border-radius: 20%;
+  padding: 2%;
+
+}
+button:hover{
+  opacity: 0.7;
+}
+input{
+  width: 12%;
+}
+form{
+  text-align: center;
+}
+h2{
+  color:rgb(29, 134, 239) ;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

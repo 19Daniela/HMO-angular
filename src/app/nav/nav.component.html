@@ -1,0 +1,32 @@
+<!-- <nav>
+   <a href=""></a>
+</nav> -->
+<!-- <header><img src="../../assests/logo.png" alt="logo"></header> -->
+  <!-- <nav>
+    <div><button (click)="navigateToListLogin()"><label>Login</label></button></div> <br>
+    <div><button (click)="navigateToListHomePage()"><label>Home Page</label></button></div> <br>
+   <div><button (click)="navigateToListCustomer()"><label>Customers</label></button></div> <br>
+   <div><button (click)="navigateToListDoctors()"><label>Doctors</label></button></div> <br>
+   <div><button (click)="navigateToListTurns()"><label>Turns</label></button></div> <br>
+  </nav> -->
+
+
+  <nav>
+    <ul *ngIf="!login.isLogin">
+      <li><a routerLink="/login">Login</a></li>
+      <li><a routerLink="/homePage">Home Page</a></li>
+      <li><a routerLink="/listCustomer">Customer</a></li>
+      <li><a routerLink="/listDoctors">Doctors</a></li>
+      <li><a routerLink="/listTurns">Turns</a></li>
+    </ul>
+    <ul *ngIf="login.isLogin">
+      <li><a routerLink="/login">Logout</a></li>
+      <li><a routerLink="/homePage"  >Home Page</a></li>
+      <li><a routerLink="/listCustomer"  >Customer</a></li>
+      <li><a routerLink="/listDoctors"  >Doctors</a></li>
+      <li><a routerLink="/listTurns"  >Turns</a></li>
+    </ul>
+  </nav>
+
+ <router-outlet></router-outlet>
+

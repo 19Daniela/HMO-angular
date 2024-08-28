@@ -1,0 +1,16 @@
+<img src="../../assets/שקופית1.PNG" alt="">
+<div *ngIf="!_customerService.isLogin">
+
+ <h1>Macabi</h1>
+
+<h2>Welcome to Macabi</h2>
+<p>for make an appointment press the button login and fill the right details.</p>
+</div>
+<!-- ביצעתי בדיקה אם המזכירה התחברה אם כן יוצג המסך הזה אחרת יוצג המסך למעלה -->
+<div *ngIf="_customerService.isLogin">
+<h1>Maccabi</h1>
+<p>Welcome to Maccabi website. <br>
+  Successfully logged in. <br>
+  Have a nice day!
+</p>
+</div>

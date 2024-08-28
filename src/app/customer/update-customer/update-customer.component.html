@@ -1,0 +1,22 @@
+<div >
+
+  <form #updateForm="ngForm">
+    <div class="update">
+      id: <br> <input name="id" #idId="ngModel" type="text" [(ngModel)]="customer.id">
+    </div>
+  <div class="update">
+    name:<br> <input name="name" #nameId="ngModel" type="text" [(ngModel)]="customer.name">
+  </div>
+<div class="update">
+  phone:<br> <input name="phone" #phoneId="ngModel" type="text" [(ngModel)]="customer.phone">
+</div>
+<div class="update">
+  email:<br> <input name="email" #emailId="ngModel" type="text" [(ngModel)]="customer.email">
+</div>
+<div class="update">
+  age: <br><input name="age" #ageId="ngModel" type="number" [(ngModel)]="customer.age">
+</div>
+</form>
+<button (click)="save()">update</button>
+
+</div>

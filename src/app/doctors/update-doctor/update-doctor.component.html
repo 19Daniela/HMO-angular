@@ -1,0 +1,56 @@
+<!-- <div>
+
+  <h4 style="color: cornflowerblue;">Update form</h4>
+<form [formGroup]="updateDoctor" (ngSubmit)="onSubmit()">
+  <div>
+        <label>Id:</label> <br>
+        <input type="text" formControlName="id">
+
+      </div>
+    <div>
+        <label>Name:</label> <br>
+      <input type="text" formControlName="name">
+
+    </div>
+
+      <div>
+         <label>Age:</label> <br>
+        <input type="text" formControlName="age">
+</div>
+<div>
+  <label>Phone:</label> <br>
+<input type="text" formControlName="phone">
+
+</div>
+<div>
+  <label>Salary:</label> <br>
+<input type="text" formControlName="salary">
+
+    </div>
+<button type="submit" (click)="onSubmit()">save</button>
+</form>
+</div> -->
+
+
+<div >
+
+  <form #updateForm="ngForm">
+    <div class="update">
+      id: <br> <input name="id" #idId="ngModel" type="text" [(ngModel)]="doctor.id">
+    </div>
+  <div class="update">
+    name: <br><input name="name" #nameId="ngModel" type="text" [(ngModel)]="doctor.name">
+  </div>
+<div class="update">
+  age: <br><input name="age" #ageId="ngModel" type="number" [(ngModel)]="doctor.age">
+</div>
+<div class="update">
+  phone:<br> <input name="phone" #phoneId="ngModel" type="text" [(ngModel)]="doctor.phone">
+</div>
+<div class="update">
+  salary:<br> <input name="salary" #salaryId="ngModel" type="number" [(ngModel)]="doctor.salary">
+</div>
+</form>
+<button (click)="save()">update</button>
+
+</div>

@@ -1,0 +1,40 @@
+<h2 mat-dialog-title>Add new doctor</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="data?.doctor.name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <!-- <div>
+        <label>Doctor's city:</label>
+        <input type="text" formControlName="city">
+       
+    </div> -->
+        <mat-label>Phone</mat-label>
+        <input matInput [(ngModel)]="data?.doctor.phone"> 
+        <!-- @if(data.doctor.controls['phone'].errors?.['required'])
+        {
+        <p>this field is required</p>
+        } -->  
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Age</mat-label>
+    <input matInput [(ngModel)]="data?.doctor.age">
+  </mat-form-field>
+
+  <mat-form-field>
+  <mat-label>Salary:</mat-label>
+  <input matInput [(ngModel)]="data?.doctor.salary" > 
+  <!-- @if(data?.doctor.controls['salary'].errors?.['required'])
+  {
+  <p>this field is required</p>
+  } -->
+</mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onSubmit()"  cdkFocusInitial>Ok</button>
+</mat-dialog-actions>
+

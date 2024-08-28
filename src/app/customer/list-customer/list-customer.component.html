@@ -1,0 +1,47 @@
+<div>
+  <h3>Customer List</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">#</th> -->
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">Age</th>
+     </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let c of customerList">
+    <!-- <div *ngIf="_customerService.isLogin">
+      <app-delete-customer></app-delete-customer>
+      </div> -->
+
+      <td>{{c.id}}</td>
+      <td>{{c.name}}</td>
+      <td>{{c.phone}}</td>
+      <td>{{c.address}}</td>
+      <td>{{c.email}}</td>
+      <td>{{c.age}}</td>
+      <div *ngIf="_customerService.isLogin">
+        <app-delete-customer  [id]="c.id" (deleteCustomer)="handleDelete($event)"></app-delete-customer>
+      <button (click)="update()">update</button>
+    <app-update-customer *ngIf="isUpdate" [customer]="c"></app-update-customer>
+    </div>
+
+      <!-- <button > update<app-update-customer [customer]="c" (onUpdate)="handleUpdate($event)"> </app-update-customer></button> -->
+</tr>
+</tbody>
+</table>
+<div *ngIf="_customerService.isLogin">
+<!-- <button (click)="add()"> add</button> -->
+ <app-dialog1></app-dialog1>
+</div>
+
+</div>
+
+@if(showAddCustomer)
+{
+  <app-add-customer></app-add-customer>
+}

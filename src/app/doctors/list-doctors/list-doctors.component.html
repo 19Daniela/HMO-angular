@@ -1,0 +1,71 @@
+<!--
+  <button class="addDoctor" type="button" style="color: cornflowerblue;" (click)="navToAddDoctor()" placeholder="getDoctors"> add</button>
+<mat-accordion  *ngFor="let d of doctors" style="border: 1px solid black;"  >
+    <mat-expansion-panel hideToggle>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header >
+        <mat-panel-title>
+        </mat-panel-title>
+        <mat-panel-description>
+          {{d.name}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+        <div >
+            <p>{{d.age}} </p>
+            <p> {{d.phone}}</p>
+            <p>{{d.salary}}</p>
+         </div>
+
+      <app-delete-doctor  [id]="d.id" (deleteDoctor)="handleDelete($event)"></app-delete-doctor>
+
+        <button (click)="isUpdate(d)" style="color: cornflowerblue;">update</button>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <app-update-doctor *ngIf="click===true" [doctor] ="currentDoctor!"  (saveUpdate)="handleSaveUpdate($event)"></app-update-doctor>
+ -->
+
+
+ <div>
+  <h3>Doctors List</h3>
+  <table class="table">
+    <thead>
+      <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Salary</th>
+     </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let d of doctors">
+      <td>{{d.id}}</td>
+      <td>{{d.name}}</td>
+      <td>{{d.age}}</td>
+      <td>{{d.phone}}</td>
+      <td>{{d.salary}}</td>
+<!-- מציג את העדכון והמחיקה רק אם התחבר לאתר  -->
+      <div *ngIf="_doctorsService.isLogin">
+        <app-delete-doctor  [id]="d.id" (deleteDoctor)="handleDelete($event)"></app-delete-doctor>
+      <button (click)="isUpdate(d)">update</button>
+      </div>
+      <!-- <app-update-doctor *ngIf="isUpdate" [doctor]="d"></app-update-doctor> -->
+</tr>
+</tbody>
+</table>
+<div *ngIf="_doctorsService.isLogin">
+  <!-- <button  (click)="add()"><label >+</label></button> -->
+  <app-dialog1></app-dialog1>
+</div>
+
+</div>
+<app-update-doctor *ngIf="click===true" [doctor] ="currentDoctor!"  (saveUpdate)="handleSaveUpdate($event)"></app-update-doctor>
+
+@if(showAddDoctor)
+{
+  <app-add-doctor></app-add-doctor>
+ }
+
+

@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>Add new customer</h2>
+<div>
+
+  <mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="data?.customer.name">
+  </mat-form-field>
+
+<mat-form-field>
+<mat-label>Phone</mat-label>
+<input matInput [(ngModel)]="data?.customer.phone">
+</mat-form-field>
+
+  <mat-form-field>
+    <mat-label>address</mat-label>
+    <input matInput [(ngModel)]="data?.customer.address">
+  </mat-form-field>
+
+<mat-form-field>
+  <mat-label>email</mat-label>
+<input matInput [(ngModel)]="data?.customer.email" >
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>age</mat-label>
+  <input matInput [(ngModel)]="data?.customer.age">
+</mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+<button class="dialogButton" mat-button (click)="onNoClick()">No Thanks</button>
+<button class="dialogButton" mat-button (click)="onSubmit()"  cdkFocusInitial>Ok</button>
+</mat-dialog-actions>
+</div>

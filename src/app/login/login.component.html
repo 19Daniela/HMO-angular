@@ -1,0 +1,32 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <h2>login</h2>
+    <!-- <img src="../../assests/logo.png" alt="logo"> -->
+    <div>
+      <label>user name*:</label> <br>
+      <input type="text" formControlName="userName"/>
+      <!-- @if(loginForm.controls['userName'].errors?.['required'])
+      {
+        <div>you must enter user name!</div>
+      } -->
+    </div>
+    <div>
+
+      <!-- <mat-form-field>
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field> -->
+
+      <label>password*:</label> <br>
+      <input type="password" formControlName="password" /> <br>
+      @if(loginForm.controls['password'].errors?.['minlength']){
+        <p>required 8 carts at least</p>
+      }
+    </div> <br>
+    <button type="submit">login</button>
+  </form>
+
+
+
